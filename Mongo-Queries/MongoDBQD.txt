@@ -1,0 +1,5 @@
+db.employees.aggregate([
+{$sort:{"name":1}},
+{$match: {"expertise":{$exists: true}}},
+{$project : {_id: 0, "name":1, "Skill": {$arrayElemAt: ["$expertise",0]} }}
+])

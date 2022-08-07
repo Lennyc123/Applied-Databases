@@ -1,0 +1,4 @@
+select g.genrename, count(*) from film f
+join genre g on f.filmgenreid = g.genreid
+group by g.genrename
+order by g.genrename asc;

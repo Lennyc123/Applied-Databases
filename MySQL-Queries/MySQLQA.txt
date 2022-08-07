@@ -1,0 +1,8 @@
+select DISTINCT(f.filmname), c.countryname from film f
+join country c on f.filmcountryid = c.countryid 
+join director d on f.filmdirectorid = d.directorid 
+join filmcast fc on f.filmid = fc.castfilmid 
+join actor a on fc.castactorid = a.actorid 
+where f.filmcountryid != 241 and d.directorcountryid != 241 
+and d.directorcountryid = a.actorcountryid 
+order by c.countryname asc;

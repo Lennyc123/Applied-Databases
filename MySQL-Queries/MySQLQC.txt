@@ -1,0 +1,5 @@
+select DISTINCT (f.filmname) from film f
+join filmcast fc on f.filmid = fc.castfilmid 
+join actor a on fc.castactorid = a.actorid 
+where a.ActorCountryID = 240
+order by f.filmname  asc;

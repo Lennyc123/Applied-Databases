@@ -1,0 +1,1 @@
+db.employees.aggregate([{$bucket: {groupBy: "$salary", boundaries: [ 0, 37999, 38000, 47999, 48000, 49000, 50000 ], default: ">50000", output: {"count": {$sum: 1}}} }])
